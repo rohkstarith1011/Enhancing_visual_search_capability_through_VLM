@@ -1,0 +1,47 @@
+# ----------------------------------------------------------------------
+# 1. Massive Raw Data (MUST IGNORE)
+# Prevents the GitHub size limit error.
+# ----------------------------------------------------------------------
+
+# The entire raw dataset directory (contains thousands of large images)
+/Culinary_Caption_Dataset_Demo/
+
+# Ignore any specific generated images, plots, or logs
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.avif
+*.log
+
+
+# ----------------------------------------------------------------------
+# 2. Raw Embeddings (Intermediate, Very Large Files)
+# ----------------------------------------------------------------------
+
+# These NumPy files contain the raw vector embeddings (often hundreds of MBs to GBs).
+# The project can run by only committing the FAISS index files (*.index), which are derived from these.
+# Ignoring *.npy is the SAFEST way to prevent push errors.
+*.npy
+
+
+# ----------------------------------------------------------------------
+# 3. Model Weights and Checkpoints (If too large)
+# ----------------------------------------------------------------------
+
+# Ignore large model checkpoints/weights
+# If your final model is over 50MB, you should ignore it here and rely on Git LFS.
+*.safetensors
+*.bin
+pytorch_model.bin
+
+
+# ----------------------------------------------------------------------
+# 4. Standard Cache and Environment Files
+# ----------------------------------------------------------------------
+
+# Python/Environment cache and temporary files
+__pycache__/
+.ipynb_checkpoints/
+.config/
+/sample_data/
